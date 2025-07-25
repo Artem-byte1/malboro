@@ -2232,7 +2232,7 @@ function Luna:CreateWindow(WindowSettings)
 		ConfigSettings = {},
 
 		KeySystem = false,
-		KeySettings = {}
+		KeySettings = {"Apex"}
 	}, WindowSettings or {})
 
 	WindowSettings.ConfigSettings = Kwargify({

@@ -2209,7 +2209,7 @@ function Luna:CreateWindow(WindowSettings)
 		ConfigSettings = {},
 
 		KeySystem = true,
-		KeySettings = {Apex}
+		KeySettings = {}
 	}, WindowSettings or {})
 
 	WindowSettings.ConfigSettings = Kwargify({
@@ -2228,9 +2228,9 @@ function Luna:CreateWindow(WindowSettings)
 	}, WindowSettings.KeySettings or {})
 
 	WindowSettings.KeySettings.SecondAction = Kwargify({
-		Enabled = false,
-		Type = "Discord", -- Link/Discord
-		Parameter = "" -- for discord, add the invite link like home tab. for link, type the link of ur key sys
+		Enabled = true,
+		Type = "t.me/ApexPc_Channel", -- Link/Discord
+		Parameter = "t.me/ApexPc_Channel" -- for discord, add the invite link like home tab. for link, type the link of ur key sys
 	}, WindowSettings.KeySettings.SecondAction)
 
 	local Passthrough = false
@@ -6721,7 +6721,7 @@ if isStudio then
 			}
 		}
 	})
-	
+	Window:LoadUI()
 	--[[local Window = Luna:CreateWindow({
 		Name = "Luna Example Window",
 		Subtitle = "Test",

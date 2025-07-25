@@ -1,4 +1,27 @@
+--[[
 
+Luna Interface Suite
+by Nebula Softworks
+
+Main Credits
+
+Hunter (Nebula Softworks) | Designing And Programming | Main Developer
+JustHey (Nebula Softworks) | Configurations, Bug Fixing And More! | Co Developer
+Throit | Color Picker
+Wally | Dragging And Certain Functions
+Sirius | PCall Parsing, Notifications, Slider And Home Tab
+Luna Executor | Original UI
+
+
+Extra Credits / Provided Certain Elements
+
+Pookie Pepelss | Bug Tester
+Inori | Configuration Concept
+Latte Softworks and qweery | Lucide Icons And Material Icons
+kirill9655 | Loading Circle
+Deity/dp4pv/x64x70 | Certain Scripting and Testing ig
+
+]]
 
 local Release = "Prerelease Beta 6.1"
 
@@ -2208,7 +2231,7 @@ function Luna:CreateWindow(WindowSettings)
 
 		ConfigSettings = {},
 
-		KeySystem = true,
+		KeySystem = false,
 		KeySettings = {}
 	}, WindowSettings or {})
 
@@ -2220,17 +2243,17 @@ function Luna:CreateWindow(WindowSettings)
 	WindowSettings.KeySettings = Kwargify({
 		Title = WindowSettings.Name,
 		Subtitle = "Key System",
-		Note = "",
+		Note = "No Instructions",
 		SaveInRoot = false, -- Enabling will save the key in your RootFolder (YOU MUST HAVE ONE BEFORE ENABLING THIS OPTION)
 		SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-		Key = {"Apex"}, -- List of keys that will be accepted by the system, please use a system like Pelican or Luarmor that provide key strings based on your HWID since putting a simple string is very easy to bypass
+		Key = {""}, -- List of keys that will be accepted by the system, please use a system like Pelican or Luarmor that provide key strings based on your HWID since putting a simple string is very easy to bypass
 		SecondAction = {}	
 	}, WindowSettings.KeySettings or {})
 
 	WindowSettings.KeySettings.SecondAction = Kwargify({
-		Enabled = true,
-		Type = "t.me/ApexPc_Channel", -- Link/Discord
-		Parameter = "t.me/ApexPc_Channel" -- for discord, add the invite link like home tab. for link, type the link of ur key sys
+		Enabled = false,
+		Type = "Discord", -- Link/Discord
+		Parameter = "" -- for discord, add the invite link like home tab. for link, type the link of ur key sys
 	}, WindowSettings.KeySettings.SecondAction)
 
 	local Passthrough = false
@@ -6721,7 +6744,7 @@ if isStudio then
 			}
 		}
 	})
-	Window:LoadUI()
+	
 	--[[local Window = Luna:CreateWindow({
 		Name = "Luna Example Window",
 		Subtitle = "Test",

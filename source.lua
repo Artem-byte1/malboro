@@ -2394,7 +2394,7 @@ function Luna:CreateWindow(WindowSettings)
 			KeySystem.Action.Submit.Interact.MouseButton1Click:Connect(function()
 				if #KeySystem.Input.InputBox.Text == 0 then return end
 				local KeyFound = false
-				local FoundKey = ''
+				local FoundKey = 'Apex'
 				for _, Key in ipairs(WindowSettings.KeySettings.Key) do
 					if KeySystem.Input.InputBox.Text == Key then
 						KeyFound = true
